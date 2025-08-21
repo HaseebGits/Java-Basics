@@ -1,20 +1,27 @@
-import java.util.TreeSet; // I use TreeSet because it prints strings and numbers in sorted form automatically
-public class Task1{
-    public static void main(String[] args){
+import java.util.TreeSet;// I use TreeSet because it prints strings and numbers in sorted form automatically
+import java.util.Scanner;
+
+public class Task1 {
+    public static void main(String[] args) {
         TreeSet<String> names = new TreeSet<>();
-        names.add("Zain");
-        names.add("Moeed");
-        names.add("Fayez");
-        names.add("Saud");
-        names.add("Ahsan");
-        names.add("Rehman");
-        names.add("Salman");
-        names.add("Burhan");
-        names.add("Daniyal");
-        names.add("Ali");
-        System.out.println("The student list are: ");
-        for (String n:names){
-            System.out.println(n);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of students: ");
+        int count = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 1; i <= count; i++) {
+            System.out.print("Enter name of student :");
+            String name = scanner.nextLine();
+            names.add(name);
         }
+
+        System.out.println("\nThe student list in sorted order:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        scanner.close();
     }
 }
+
